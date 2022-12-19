@@ -14,7 +14,7 @@ import {
   checkPinCode,
   setToast,
 } from "../components/Other/CheckProperty";
-import { displayRazorpay } from "../components/rozarpay/RozarPay";
+// import { displayRazorpay } from "../components/rozarpay/RozarPay";
 
 const initialState = {
   firstName: "",
@@ -78,10 +78,10 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!handleFormValidation(form)) {
-      return;
-    } else {
-      displayRazorpay(total_discount, form, navigate,profileImg,dispatch);
-    }
+      return;}
+    // } else {
+    //   displayRazorpay(total_discount, form, navigate,profileImg,dispatch);
+    // }
   };
   // =====================Login Down========================================================================
   const convertStringIntoNumber = (str) => {
