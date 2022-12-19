@@ -6,7 +6,7 @@ import * as types from "./actionType";
 const register = (payload, toast) => (dispatch) => {
   dispatch({ type: types.REGISTER_R });
   return axios
-    .post("http://localhost:5000/api/auth/register", payload)
+    .post("https://repair-83uf.onrender.com/api/auth/register", payload)
     .then((r) => {
       console.log(r.data)
       setToast(toast, "Registered Successful", "success");
@@ -22,7 +22,7 @@ const login = (payload, toast) => (dispatch) => {
   saveLocalData("userInfo", payload.username)
   dispatch({ type: types.LOGIN_R });
   return axios
-    .post("http://localhost:5000/api/auth/login", payload)
+    .post("https://repair-83uf.onrender.com/api/auth/login", payload)
     .then((r) => {
       setToast(toast, "Login Successful", "success");
       dispatch({ type: types.LOGIN_S, payload: r.data.accessToken });
@@ -37,7 +37,7 @@ const profile = (payload) => (dispatch) => {
   dispatch({ type: types.PROFILE_R });
   const options = {
     method: "GET",
-    url: `http://localhost:5000/api/auth/profile/${payload.username}`,
+    url: `https://repair-83uf.onrender.com/api/auth/profile/${payload.username}`,
     headers: { token: `Bearer ${payload.token}` },
   };
   return axios(options)
@@ -55,7 +55,7 @@ const logout = (payload) => (dispatch) => {
   dispatch({ type: types.LOGOUT_R});
   const options = {
     method: "POST",
-    url: `http://localhost:5000/api/auth/logout`,
+    url: `https://repair-83uf.onrender.com/api/auth/logout`,
     headers: { token: `Bearer ${payload.token}`},
   };
   return axios(options);
