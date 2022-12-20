@@ -17,7 +17,7 @@ import logo from "../../img/favicon.ico";
 import { BsSuitHeart } from "react-icons/bs";
 import { BsBag } from "react-icons/bs";
 import { DarkModeBtn } from "../DarkMode/DarkModeBtn";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import SideMenu from "../Sidebar/Sidebar";
 import Profile from "../Profile/Profile";
 import { profile } from "../../redux/AuthReducer/action";
@@ -71,7 +71,7 @@ const Navbar = () => {
     <div className="Navbar">
       <Flex fontWeight="bold">
         <HStack onClick={handleHome} cursor={"pointer"}>
-          <Image width={["25px"]} m={5} src={logo} alt="logo" />
+          <Image width={["120px"]} ml={100} src={logo} alt="logo" />
         </HStack>
         <Spacer />
         {isLargerThan ? (
@@ -108,14 +108,14 @@ const Navbar = () => {
         <HStack>
           {auth ? (
             <>
-            <Box>
-              <Text color={"yellow.400"}>
-                {profileData.length !== 0 ? profileData.point : ""} Điểm ET
-              </Text>
-            </Box>
-            <Box>
-              <Profile colorMode={colorMode} />
-            </Box>
+              <Box>
+                <Text color={"yellow.400"}>
+                  {profileData.length !== 0 ? profileData.point : ""} Điểm ET
+                </Text>
+              </Box>
+              <Box>
+                <Profile colorMode={colorMode} />
+              </Box>
             </>
           ) : (
             <Button
