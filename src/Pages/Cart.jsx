@@ -138,7 +138,7 @@ const Cart = () => {
                 ))}
             </Box>
             {/* ------------------------------up fetching cart and down checkout---------------------------------------- */}
-            <Box width={["95%", "90%", "40%", "35%"]}>
+            {/* <Box width={["95%", "90%", "40%", "35%"]}>
               <CheckOutPage
                 title={"CHECKOUT"}
                 cart={cart}
@@ -147,7 +147,7 @@ const Cart = () => {
                 link={"/checkout"}
                 quantity={quantity}
               />
-            </Box>
+            </Box> */}
           </Flex>
         
         </div>

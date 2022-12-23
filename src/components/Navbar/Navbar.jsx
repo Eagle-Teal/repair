@@ -19,7 +19,7 @@ import { BsBag } from "react-icons/bs";
 import { DarkModeBtn } from "../DarkMode/DarkModeBtn";
 import { useSelector, useDispatch } from "react-redux";
 import SideMenu from "../Sidebar/Sidebar";
-import Profile from "../Profile/Profile";
+// import Profile from "../Profile/Profile";
 import { profile } from "../../redux/AuthReducer/action";
 import { getLocalData } from "../../utils/localStorage";
 
@@ -106,18 +106,6 @@ const Navbar = () => {
         <Spacer />
 
         <HStack>
-          {auth ? (
-            <>
-              <Box>
-                <Text color={"yellow.400"}>
-                  {profileData.length !== 0 ? profileData.point : ""} Điểm ET
-                </Text>
-              </Box>
-              <Box>
-                <Profile colorMode={colorMode} />
-              </Box>
-            </>
-          ) : (
             <Button
               bg={"black"}
               color={"whitesmoke"}
@@ -130,7 +118,7 @@ const Navbar = () => {
             >
               Sign up
             </Button>
-          )}
+          )
           <Box mr={["5", "6", "7", "9"]}>
             {" "}
             <DarkModeBtn />
