@@ -18,20 +18,20 @@ import * as types from "./actionType";
 //     });
 // };
 
-const login = (payload, toast) => (dispatch) => {
-  saveLocalData("userInfo", payload.username)
-  dispatch({ type: types.LOGIN_R });
-  return axios
-    .post("https://repair-83uf.onrender.com/api/auth/login", payload)
-    .then((r) => {
-      setToast(toast, "Login Successful", "success");
-      dispatch({ type: types.LOGIN_S, payload: r.data.accessToken });
-    })
-    .catch((e) => {
-      setToast(toast, e.response.data.message, "error");
-      dispatch({ type: types.LOGIN_F, payload: e });
-    });
-};
+// const login = (payload, toast) => (dispatch) => {
+//   saveLocalData("userInfo", payload.username)
+//   dispatch({ type: types.LOGIN_R });
+//   return axios
+//     .post("https://repair-83uf.onrender.com/api/auth/login", payload)
+//     .then((r) => {
+//       setToast(toast, "Login Successful", "success");
+//       dispatch({ type: types.LOGIN_S, payload: r.data.accessToken });
+//     })
+//     .catch((e) => {
+//       setToast(toast, e.response.data.message, "error");
+//       dispatch({ type: types.LOGIN_F, payload: e });
+//     });
+// };
 
 const profile = (payload) => (dispatch) => {
   dispatch({ type: types.PROFILE_R });

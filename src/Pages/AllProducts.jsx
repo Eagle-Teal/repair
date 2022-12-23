@@ -50,7 +50,7 @@ const AllProducts = () => {
         // <>
           <Flex flexDirection={isLargerThan ? "row" : "column"}>
             <Box w={isLargerThan ? "15%" : "100%"}>
-              <FilterData />
+              {/* <FilterData /> */}
               {/* <FilterChecked/> */}
             </Box>
             <Spacer />
