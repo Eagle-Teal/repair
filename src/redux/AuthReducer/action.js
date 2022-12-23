@@ -61,7 +61,7 @@ const logout = (payload) => (dispatch) => {
   return axios(options);
 } 
 
-export { login, register, profile,logout };
+export { login, profile,logout };
 
 
 // const login = (payload,toast) => (dispatch) => {
