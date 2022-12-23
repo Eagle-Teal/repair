@@ -3,20 +3,20 @@ import { setToast } from "../../components/Other/CheckProperty";
 import { saveLocalData } from "../../utils/localStorage";
 import * as types from "./actionType";
 
-const register = (payload, toast) => (dispatch) => {
-  dispatch({ type: types.REGISTER_R });
-  return axios
-    .post("https://repair-83uf.onrender.com/api/auth/register", payload)
-    .then((r) => {
-      console.log(r.data)
-      setToast(toast, "Registered Successful", "success");
-      dispatch({ type: types.REGISTER_S, payload: r.data });
-    })
-    .catch((e) => {
-      setToast(toast, e.response.data.message, "error");
-      dispatch({ type: types.REGISTER_F, payload: e });
-    });
-};
+// const register = (payload, toast) => (dispatch) => {
+//   dispatch({ type: types.REGISTER_R });
+//   return axios
+//     .post("https://repair-83uf.onrender.com/api/auth/register", payload)
+//     .then((r) => {
+//       console.log(r.data)
+//       setToast(toast, "Registered Successful", "success");
+//       dispatch({ type: types.REGISTER_S, payload: r.data });
+//     })
+//     .catch((e) => {
+//       setToast(toast, e.response.data.message, "error");
+//       dispatch({ type: types.REGISTER_F, payload: e });
+//     });
+// };
 
 const login = (payload, toast) => (dispatch) => {
   saveLocalData("userInfo", payload.username)
