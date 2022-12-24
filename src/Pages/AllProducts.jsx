@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import FilterData from "../Filter/Filters/FilterData";
+// import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
 import { Flex, Box, Spacer, Grid } from "@chakra-ui/react";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
