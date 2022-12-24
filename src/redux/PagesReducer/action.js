@@ -48,7 +48,7 @@ const getHomeData = () => (dispatch) => {
   dispatch({ type: types.GET_MENS_DATA_R });
 
   return axios
-    .get("https://repair-83uf.onrender.com/api/products")
+    .get("https://eagletealapi.adaptable.app/api/products")
     .then((res) => {
       dispatch({ type: types.GET_HOMEDATA_S, payload: res.data });
     })

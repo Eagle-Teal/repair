@@ -3,7 +3,7 @@ import axios from "axios";
 const getData = (params) => (dispatch) => {
   dispatch({ type: types.GET_DATA_R });
   return axios
-    .get("https://repair-83uf.onrender.com/api/products", params)
+    .get("https://eagletealapi.adaptable.app/api/products", params)
     .then((res) => {
       dispatch({ type: types.GET_DATA_S, payload: res.data });
     })

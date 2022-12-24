@@ -3,41 +3,41 @@ import { setToast } from "../../components/Other/CheckProperty";
 import { saveLocalData } from "../../utils/localStorage";
 import * as types from "./actionType";
 
-// const register = (payload, toast) => (dispatch) => {
-//   dispatch({ type: types.REGISTER_R });
-//   return axios
-//     .post("https://repair-83uf.onrender.com/api/auth/register", payload)
-//     .then((r) => {
-//       console.log(r.data)
-//       setToast(toast, "Registered Successful", "success");
-//       dispatch({ type: types.REGISTER_S, payload: r.data });
-//     })
-//     .catch((e) => {
-//       setToast(toast, e.response.data.message, "error");
-//       dispatch({ type: types.REGISTER_F, payload: e });
-//     });
-// };
+const register = (payload, toast) => (dispatch) => {
+  dispatch({ type: types.REGISTER_R });
+  return axios
+    .post("https://eagletealapi.adaptable.app/api/auth/register", payload)
+    .then((r) => {
+      console.log(r.data)
+      setToast(toast, "Registered Successful", "success");
+      dispatch({ type: types.REGISTER_S, payload: r.data });
+    })
+    .catch((e) => {
+      setToast(toast, e.response.data.message, "error");
+      dispatch({ type: types.REGISTER_F, payload: e });
+    });
+};
 
-// const login = (payload, toast) => (dispatch) => {
-//   saveLocalData("userInfo", payload.username)
-//   dispatch({ type: types.LOGIN_R });
-//   return axios
-//     .post("https://repair-83uf.onrender.com/api/auth/login", payload)
-//     .then((r) => {
-//       setToast(toast, "Login Successful", "success");
-//       dispatch({ type: types.LOGIN_S, payload: r.data.accessToken });
-//     })
-//     .catch((e) => {
-//       setToast(toast, e.response.data.message, "error");
-//       dispatch({ type: types.LOGIN_F, payload: e });
-//     });
-// };
+const login = (payload, toast) => (dispatch) => {
+  saveLocalData("userInfo", payload.username)
+  dispatch({ type: types.LOGIN_R });
+  return axios
+    .post("https://eagletealapi.adaptable.app/api/auth/login", payload)
+    .then((r) => {
+      setToast(toast, "Login Successful", "success");
+      dispatch({ type: types.LOGIN_S, payload: r.data.accessToken });
+    })
+    .catch((e) => {
+      setToast(toast, e.response.data.message, "error");
+      dispatch({ type: types.LOGIN_F, payload: e });
+    });
+};
 
 const profile = (payload) => (dispatch) => {
   dispatch({ type: types.PROFILE_R });
   const options = {
     method: "GET",
-    url: `https://repair-83uf.onrender.com/api/auth/profile/${payload.username}`,
+    url: `https://eagletealapi.adaptable.app/api/auth/profile/${payload.username}`,
     headers: { token: `Bearer ${payload.token}` },
   };
   return axios(options)
@@ -55,13 +55,13 @@ const logout = (payload) => (dispatch) => {
   dispatch({ type: types.LOGOUT_R});
   const options = {
     method: "POST",
-    url: `https://repair-83uf.onrender.com/api/auth/logout`,
+    url: `https://eagletealapi.adaptable.app/api/auth/logout`,
     headers: { token: `Bearer ${payload.token}`},
   };
   return axios(options);
 } 
 
-export {  profile,logout };
+export {login,register, profile,logout };
 
 
 // const login = (payload,toast) => (dispatch) => {
