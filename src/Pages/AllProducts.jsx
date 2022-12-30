@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useMediaQuery } from "@chakra-ui/react";
+import { Flex, Box, Spacer, Grid } from "@chakra-ui/react";
+import { useLocation, useSearchParams } from "react-router-dom";
 // import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
-import { Flex, Box, Spacer, Grid } from "@chakra-ui/react";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
-import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
-import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 // import Paginate from "../components/Paginatation/Paginate";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
