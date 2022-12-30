@@ -51,7 +51,7 @@ const ProductDis = ({ item }) => {
           <Text as={Flex} alignItems={"center"}  fontSize={["xs", "sm", "md", "md"]}>
             <Icon as={StarIcon} color="yellow.500" /> : {rating}
           </Text>
-          <Text fontSize={["xs", "sm", "md", "md"]}>Review : ({reviews}) </Text>
+          {/* <Text fontSize={["xs", "sm", "md", "md"]}>Review : ({reviews}) </Text> */}
         </Flex>
         <HStack justify={"left"}>
           <Text fontWeight={"semibold"} fontSize={["sm", "md", "lg", "xl"]}>
