@@ -51,9 +51,11 @@ const Login = () => {
         username,
         password,
       };
-      dispatch(login(params, toast)).then((res) => {
+      dispatch(login(params, toast))
+      .then((res) => {
         navigate(pathRoute, { replace: true });
-      });
+      })
+      .catch((err)=>{navigate("/login")})
     }
   };
 
