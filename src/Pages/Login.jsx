@@ -55,7 +55,6 @@ const Login = () => {
       .then((res) => {
         navigate(pathRoute, { replace: true });
       })
-      .catch((err)=>{navigate("/login")})
     }
   };
 
