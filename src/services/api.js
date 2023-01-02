@@ -1,6 +1,6 @@
 import axios from "axios"
 const JWTaxios = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://eagletealapi.adaptable.app/api",
     headers: {
       "Content-Type": "application/json",
     },withCredentials:true});

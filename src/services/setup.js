@@ -14,7 +14,7 @@ const setup = async (store) => {
             if (token) {
                 const decode = jwt_decode(token);
                 if (decode.exp < date.getTime() / 1000) {
-                    const r = await axios.post('http://localhost:5000/api/auth/refresh', {}, {
+                    const r = await axios.post('https://eagletealapi.adaptable.app/api/auth/refresh', {}, {
                         withCredentials: true,
                         headers: {
                             Credential: true
