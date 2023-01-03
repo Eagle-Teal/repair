@@ -18,7 +18,6 @@ import { GrLogout } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { CgProfile } from "react-icons/cg";
-import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { BsCartCheck } from "react-icons/bs";
 import { profile,logout } from "../../redux/AuthReducer/action";
 import { getLocalData } from "../../utils/localStorage";
