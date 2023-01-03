@@ -38,8 +38,13 @@ const Footer = () => {
         >
           <Box onClick={handleHome} border={isSmallerThan?"4px solid grey":"0"} borderRadius={"20px"} height={isSmallerThan ?"150px":"130px"} marginTop={"10px"}>
           <SimpleGrid columns={1} spacingX={"auto"} spacingY={"auto"}>
-            <img src={logo} width={150} style={{ translate: isSmallerThan ? "0px -6px" : "95% -20%" }} alt={"logo"} ></img>
-          </SimpleGrid>
+              <img src={logo} width={150} style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  display: "table",
+                  translate: isSmallerThan ? "0px -6px" : "0 -20%" 
+              }} alt={"logo"} ></img>
+            </SimpleGrid>
           </Box>
 
           <Box as={Flex} flexDirection="column" marginBottom={"15px"}>

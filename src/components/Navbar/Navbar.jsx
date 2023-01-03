@@ -64,7 +64,7 @@ const Navbar = () => {
   };
   return (
     <div className="Navbar" 
-    style={{backgroundColor:colorMode === "dark" ? "black" : "cyan",
+    style={{backgroundColor:colorMode === "dark" ? "black" : "aquamarine",
             position:'sticky',
             top:0,
             zIndex:999}}>
@@ -108,7 +108,7 @@ const Navbar = () => {
           {auth ? (
             <>
               <Box>
-                <Text color={"yellow.400"}>
+                <Text color={"rgba(110, 6, 6, 0.922)"}>
                   {profileData.length !== 0 ? profileData.point : ""} Điểm ET
                 </Text>
               </Box>
@@ -122,7 +122,7 @@ const Navbar = () => {
               color={"whitesmoke"}
               border={"1px solid beige"}
               _hover={{
-                bg: "none",
+                bg: "#555d5f",
                 color: "teal",
               }}
               onClick={handleSignup}

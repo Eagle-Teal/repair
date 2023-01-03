@@ -81,26 +81,6 @@ const Profile = ({ colorMode }) => {
               {profileData.length !== 0 ? profileData.name : ""}
             </MenuItem>
             <MenuDivider />
-            {/* {auth ? (
-              <MenuItem onClick={() => navigate("/myaccount")}>
-                <Avatar
-                  size={"xs"}
-                  name={profileData.length !== 0 ? profileData.name : ""}
-                  // src={profileData.length !== 0 ? profileData.description : ""}
-                />
-                <Text fontSize={"sm"}>
-                  {profileData.length !== 0 ? profileData.email : ""}
-                </Text>
-              </MenuItem>
-            ) : (
-              <MenuItem onClick={() => navigate("/myaccount")}>
-                <CgProfile /> My Account
-              </MenuItem>
-            )} */}
-            <MenuItem onClick={() => navigate("/wishlist")}>
-              <MdOutlineFavoriteBorder color={"red"} />
-              Wishlist
-            </MenuItem>
             <MenuItem onClick={() => navigate("/cart")}>
               <BsCartCheck color={"blue"} />
               Cart
