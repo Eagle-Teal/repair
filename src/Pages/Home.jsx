@@ -4,14 +4,12 @@ import {
 import { useSelector} from "react-redux";
 import Carousel from "../components/Carousel/Carousel";
 import Loading from "../components/Loading/Loading";
-import Navbar from "../components/Navbar/Navbar"
 import AllProducts from "../components/AllProducts/AllProducts";
 
 const Home = () => {
   const loading = useSelector((store) => store.pagesReducer.isLoading);
   return (
     <div>
-      <Navbar/>
       {loading ? (
         <Loading />
       ) : (

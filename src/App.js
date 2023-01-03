@@ -1,7 +1,7 @@
 import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-//import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -26,7 +26,7 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <AllRoutes /><br/>
       <Footer />
     </div>

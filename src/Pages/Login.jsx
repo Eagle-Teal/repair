@@ -21,7 +21,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { login } from "../redux/AuthReducer/action";
 //import { LOGIN_S } from "../redux/AuthReducer/actionType";
-import Navbar from "../components/Navbar/Navbar";
 import { ViewIcon } from "@chakra-ui/icons";
 const Login = () => {
   const dispatch = useDispatch();
@@ -60,7 +59,6 @@ const Login = () => {
 
   return (
     <>
-      <Navbar /> <br />
       <Flex minH={"100vh"} align={"center"} justify={"center"}>
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
