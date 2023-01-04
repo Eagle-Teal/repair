@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
@@ -5,6 +6,9 @@ import Navbar from "./components/Navbar/Navbar";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { useDispatch } from "react-redux";
+import { getLocalData } from "./utils/localStorage";
+import { logout } from "./redux/AuthReducer/action";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,10 +28,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const handleTabClose = event => {
+      // event.preventDefault();
+      const token = getLocalData('token');
+      const payload = {
+        token
+      }
+      dispatch(logout(payload));
+
+      return (event.returnValue = 'bạn chắc chắn muốn thoát?');
+    };
+
+    window.addEventListener('beforeunload', handleTabClose);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleTabClose);
+    };
+  }, []);
   return (
     <div className="App">
       <Navbar />
-      <AllRoutes /><br/>
+      <AllRoutes /><br />
       <Footer />
     </div>
   );
