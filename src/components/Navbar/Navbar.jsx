@@ -88,21 +88,21 @@ const Navbar = () => {
                 my="4"
                 mx="2"
               >
-                Home
+                Trang chủ
               </Text>
             </NavLink>
-            {/* <NavLink
+            <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
-              to="/allproducts"
+              to="/gift"
             >
               <Text
                 color={colorMode === "dark" ? "white" : "black"}
                 my="4"
                 mx="2"
               >
-                AllProducts
+                Quà tặng
               </Text>
-            </NavLink> */}
+            </NavLink>
           </HStack>
         ) : null}
 
@@ -132,7 +132,7 @@ const Navbar = () => {
             }}
             onClick={handleLogin}
           >
-            Login
+            Đăng nhập
           </Button>
           :
             <Button
@@ -145,7 +145,7 @@ const Navbar = () => {
               }}
               onClick={handleSignup}
             >
-              Sign up
+              Đăng ký
             </Button>
           )}
           {isLargerThan && 

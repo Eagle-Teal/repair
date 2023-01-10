@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
@@ -6,9 +7,9 @@ import Navbar from "./components/Navbar/Navbar";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { useDispatch } from "react-redux";
-import { getLocalData } from "./utils/localStorage";
-import { logout } from "./redux/AuthReducer/action";
+import { useDispatch,useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { GET_GIFT_F } from "./redux/GiftsReducer/actionType";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,15 +29,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 function App() {
+  const user = useSelector((store)=>store.AuthReducer.profileData)
+  const location = useLocation();
   const dispatch = useDispatch();
+  if(location.pathname!=='/gift' && user.admin){
+    dispatch({type:GET_GIFT_F})
+  }
   useEffect(() => {
     const handleTabClose = event => {
-      // event.preventDefault();
-      const token = getLocalData('token');
-      const payload = {
-        token
-      }
-      dispatch(logout(payload));
+      event.preventDefault();
 
       return (event.returnValue = 'bạn chắc chắn muốn thoát?');
     };
@@ -50,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <AllRoutes /><br />
+      <AllRoutes /><br/>
       <Footer />
     </div>
   );

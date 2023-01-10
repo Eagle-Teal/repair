@@ -9,7 +9,6 @@ const register = (payload, toast) => (dispatch) => {
   return axios
     .post("https://eagletealapi.adaptable.app/api/auth/register", payload)
     .then((r) => {
-      console.log(r.data)
       setToast(toast, "Registered Successful", "success");
       dispatch({ type: types.REGISTER_S, payload: r.data });
     })

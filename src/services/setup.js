@@ -8,13 +8,12 @@ const setup = async (store) => {
     const { dispatch } = store
     JWTaxios.interceptors.request.use(
         async (config) => {
-            console.log('tuyen')
             let date = new Date();
             const token = getLocalData("token");
             if (token) {
                 const decode = jwt_decode(token);
                 if (decode.exp < date.getTime() / 1000) {
-                    const r = await axios.post('https://eagletealapi.adaptable.app/api/auth/refresh', {}, {
+                    const r = await axios.post('http://localhost:5000/api/auth/refresh', {}, {
                         withCredentials: true,
                         headers: {
                             Credential: true
