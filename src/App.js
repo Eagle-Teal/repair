@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar/Navbar";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { useDispatch,useSelector } from "react-redux";
+import { getLocalData } from "./utils/localStorage";
+import { logout } from "./redux/AuthReducer/action";
 import { useLocation } from "react-router-dom";
 import { GET_GIFT_F } from "./redux/GiftsReducer/actionType";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -35,24 +37,24 @@ function App() {
   if(location.pathname!=='/gift' && user.admin){
     dispatch({type:GET_GIFT_F})
   }
-  useEffect(() => {
-    const handleTabClose = event => {
-      event.preventDefault();
+  // useEffect(() => {
+  //   const handleTabClose = event => {
+  //     event.preventDefault();
 
-      return (event.returnValue = 'bạn chắc chắn muốn thoát?');
-    };
+  //     return (event.returnValue = 'bạn chắc chắn muốn thoát?');
+  //   };
 
-    window.addEventListener('beforeunload', handleTabClose);
+  //   window.addEventListener('beforeunload', handleTabClose);
 
-    return () => {
-      window.removeEventListener('beforeunload', handleTabClose);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', handleTabClose);
+  //   };
+  // }, []);
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <AllRoutes /><br/>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
